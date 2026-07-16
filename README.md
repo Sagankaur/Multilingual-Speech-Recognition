@@ -115,3 +115,21 @@ Measures transcription accuracy:
 
 ## 🧑‍💻 Author
 **Sagandeep Kaur**  
+
+---
+
+## Repository Structure
+
+```text
+Multilingual-Speech-Recognition/
+├── docs/          # Research paper, prompt notes, and notebook comparison
+├── notebooks/     # Baseline, fine-tuning, hybrid, and final ASR notebooks
+├── scripts/       # Python exports of selected notebooks
+├── submissions/   # Generated Kaggle submission CSV/XLSX files
+└── README.md
+```
+
+The final research paper is available in:
+
+- `docs/multilingual_speech_recognition_research_paper.md`
+- `docs/multilingual_speech_recognition_research_paper.pdf`
