@@ -78,7 +78,25 @@ The notebook installs its required packages, including `faster-whisper`, `transf
 WER = (substitutions + deletions + insertions) / reference words
 ```
 
-Lower is better. The repository contains validation scaffolding and experimental notes, but it does **not** contain the hidden test references or a consistently recorded final hybrid WER. Accordingly, this README does not present an unverified final score. The committed [research paper](docs/multilingual_speech_recognition_research_paper.md) explains why the different notebook metrics are not directly comparable.
+Lower is better. The repository contains validation scaffolding and experimental notes, but it does **not** contain the hidden test references or a consistently recorded final hybrid WER. The only verified test-set score is the one reported by Kaggle (see [Kaggle results](#kaggle-results)); it was read from the Kaggle API, not recomputed here. The committed [research paper](docs/multilingual_speech_recognition_research_paper.md) explains why the different notebook metrics are not directly comparable.
+
+## Kaggle results
+
+Figures below come from the Kaggle API (account `sagandeep`, queried 2026-10-18) for the [Multilingual Speech Recognition](https://www.kaggle.com/competitions/multilingual-speech-recognition) competition.
+
+- **Leaderboard rank: 22 of 190 teams** (public leaderboard).
+- **Best WER: 0.22134** (lower is better, per the WER definition above and the leaderboard ordering). It was submitted on 2026-04-07 as `submission hybrid codex.csv`; Kaggle does not record which notebook produced an uploaded file, so the link to the hybrid pipeline rests on the file name.
+- Public and private scores are identical for every scored submission. Earlier Whisper-small CPU and inference-only runs scored between 0.43 and 0.64 WER, and some experimental submissions scored above 1.0.
+
+![Results chart generated from the Kaggle API](docs/screenshots/kaggle-results.png)
+
+*Results chart generated from the Kaggle API (not a screenshot): scored submissions over time.*
+
+Notebook output from the committed LoRA experiment (dataset duration and transcript-length distributions, not a model result):
+
+![Training-set statistics from a notebook run](docs/screenshots/kaggle-notebook-lora-training.png)
+
+The Kaggle notebooks `dlp nppe 2` and `inference only` are private and store no figures; the image above is the stored output of the committed notebook [`whisper_small_lora_clean_fixed_v2.ipynb`](notebooks/whisper_small_lora_clean_fixed_v2.ipynb).
 
 ## Repository map
 
